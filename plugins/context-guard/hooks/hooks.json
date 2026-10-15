@@ -1,0 +1,38 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ \"$OS\" = Windows_NT ]; then p=python; else p=python3; fi; exec \"$p\" \"${CLAUDE_PLUGIN_ROOT}/scripts/run.py\" Stop",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ \"$OS\" = Windows_NT ]; then p=python; else p=python3; fi; exec \"$p\" \"${CLAUDE_PLUGIN_ROOT}/scripts/run.py\" PostToolUse",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ \"$OS\" = Windows_NT ]; then p=python; else p=python3; fi; exec \"$p\" \"${CLAUDE_PLUGIN_ROOT}/scripts/run.py\" SessionStart",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

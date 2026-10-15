@@ -1,0 +1,14 @@
+{
+  "name": "team-claude-tools",
+  "description": "Командные плагины Claude Code",
+  "owner": {
+    "name": "DmitryBugrov"
+  },
+  "plugins": [
+    {
+      "name": "context-guard",
+      "source": "./plugins/context-guard",
+      "description": "Контроль размера контекста сессии: сигнал о пороге и запись передачи сессии перед /clear"
+    }
+  ]
+}

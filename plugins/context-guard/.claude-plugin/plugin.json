@@ -1,0 +1,20 @@
+{
+  "name": "context-guard",
+  "version": "0.5.0",
+  "repository": "https://github.com/DmitryBugrov/claude-plugins",
+  "description": "Контроль размера контекста сессии Claude Code: сигнал внутри хода и при остановке, запись передачи сессии, строка после сжатия.",
+  "userConfig": {
+    "threshold_tokens": {
+      "type": "number",
+      "title": "Порог контекста, токенов",
+      "description": "Размер контекста сессии, при достижении которого плагин просит записать передачу сессии",
+      "default": 170000
+    },
+    "repeat_step_tokens": {
+      "type": "number",
+      "title": "Шаг повтора, токенов",
+      "description": "Повторный сигнал — после роста контекста ещё на это число токенов",
+      "default": 50000
+    }
+  }
+}
